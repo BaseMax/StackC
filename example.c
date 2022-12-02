@@ -22,6 +22,15 @@ int main(int argc, char** argv)
     // Print the stack
     printStack(stack);
 
+    // Resize the stack
+    stack = resizeStack(stack, 10);
+
+    // Push an item to stack
+    push(stack, 100);
+
+    // Print the stack
+    printStack(stack);
+
     // Pop items from stack
     pop(stack);
     pop(stack);
