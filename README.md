@@ -68,6 +68,9 @@ printf("Top item: %d\n", peek(stack));
 // Destroy the stack
 destroyStack(stack);
 
+// Print the stack
+printf("%s\n", stackToString(stack));
+
 // Check if the stack is empty
 if (isEmpty(stack)) {
     printf("Stack is empty!\n");
