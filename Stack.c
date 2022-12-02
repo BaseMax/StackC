@@ -54,7 +54,11 @@ bool isEmpty(Stack* stack)
  */
 void push(Stack* stack, int item)
 {
-    if (isFull(stack)) {
+    if (stack->size == 0) {
+        printf("Stack not initialized!\n");
+        return;
+    }
+    else if (isFull(stack)) {
         printf("Stack is full!\n");
         return;
     }
@@ -109,8 +113,10 @@ void printStack(Stack* stack)
  */
 void destroyStack(Stack* stack)
 {
+    stack->top = -1;
+    stack->size = 0;
     free(stack->items);
-    free(stack);
+    // free(stack);
 }
 
 /**
@@ -120,6 +126,13 @@ void destroyStack(Stack* stack)
  */
 char* stackToString(Stack* stack)
 {
+    if (stack->size == 0) {
+        return "Stack not initialized!";
+    }
+    else if (isEmpty(stack)) {
+        return "Stack is empty!";
+    }
+
     char* str = (char*)malloc(100 * sizeof(char));
     sprintf(str, "Stack: ");
     for (int i = 0; i <= stack->top; i++) {

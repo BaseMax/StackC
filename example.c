@@ -52,6 +52,8 @@ int main(int argc, char** argv)
     // Destroy the stack
     destroyStack(stack);
 
+    printf("%s\n", stackToString(stack));
+
     // Check if the stack is empty
     if (isEmpty(stack)) {
         printf("Stack is empty!\n");
