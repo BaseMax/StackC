@@ -14,12 +14,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct Stack
 {
     int top;
-    unsigned capacity;
-    int *array;
+    unsigned size;
+    int *items;
 } Stack;
 
 #endif
